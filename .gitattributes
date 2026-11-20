@@ -1,0 +1,6 @@
+# Shell 脚本必须保持 LF，否则 Linux 上 gradlew 无法执行
+gradlew text eol=lf
+*.sh text eol=lf
+
+# 二进制文件不换行转换
+*.jar binary
