@@ -17,7 +17,8 @@
 5. 把本目录 `DeepSeekAdventure` 里的**全部内容与子文件夹**拖进上传框，务必包含隐藏的 `.github` 文件夹与 `.gitignore`。
 6. 点 **Commit changes**。
 7. 点顶部 **Actions** 标签 → 左侧选 **Build Android APK** → 点最新一次运行 → 等待绿色对勾（首次约 5–10 分钟）。
-8. 在运行页面底部 **Artifacts** → 下载 **`deepseek-adventure-apk`** → 解压得到 `app-debug.apk`。
+   - 如果 Actions 页面没看到任何构建：点右侧 **Run workflow** → 绿色按钮 **Run workflow**，手动触发一次即可（默认分支叫 main 或 master 都能自动触发，已同时兼容）。
+8. 在运行页面底部 **Artifacts** → 下载 **`deepseek-adventure-apk`** → 解压得到 `app-debug.apk`（下载需要登录 GitHub；artifact 有效期 90 天）。
 
 > 备选（若你愿意用命令行）：本地工程已 `git init` 并 commit，只需在 `DeepSeekAdventure` 目录执行：
 > `git remote add origin https://github.com/<你的用户名>/deepseek-adventure.git`
