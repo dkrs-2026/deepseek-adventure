@@ -8,7 +8,7 @@ sealed class ApiError(message: String) : RuntimeException(message) {
         "请求过于频繁（HTTP 429）" + (retryAfter?.let { "，建议 $it 秒后重试" } ?: "")
     )
     data class Http(val code: Int, val body: String) : ApiError("请求失败（HTTP $code）${body.take(120)}")
-    data class Network(val cause: Throwable) : ApiError("网络异常：${cause.message ?: "未知错误"}")
+    data class Network(val error: Throwable) : ApiError("网络异常：${error.message ?: "未知错误"}")
     data object Stalled : ApiError("回复中断：长时间未收到数据，已保留已到达内容")
     data class Parse(val detail: String) : ApiError("数据解析失败：$detail")
     data object EmptyKey : ApiError("请先在设置页输入 API Key")
